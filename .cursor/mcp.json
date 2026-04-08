@@ -1,0 +1,41 @@
+{
+  "mcpServers":
+  {
+    "aws-api-orion":
+    {
+      "type": "stdio",
+      "command": "uvx",
+      "args":
+      [
+        "awslabs.aws-api-mcp-server@latest"
+      ],
+      "env":
+      {
+        "AWS_PROFILE": "orion",
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_API_MCP_PROFILE_NAME": "mcp-readonly",
+        "READ_OPERATIONS_ONLY": "true",
+        "REQUIRE_MUTATION_CONSENT": "true"
+      }
+    },
+    "aws-api-agmri":
+    {
+      "type": "stdio",
+      "command": "uvx",
+      "args":
+      [
+        "awslabs.aws-api-mcp-server@latest"
+      ],
+      "env":
+      {
+        "AWS_PROFILE": "default",
+        "AWS_REGION": "us-east-1",
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_API_MCP_PROFILE_NAME": "mcp-readonly",
+        "READ_OPERATIONS_ONLY": "true",
+        "REQUIRE_MUTATION_CONSENT": "true"
+      }
+    }
+  }
+}
